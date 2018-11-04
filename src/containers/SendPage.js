@@ -17,7 +17,7 @@ import {
   ListHeader
 } from 'react-onsenui'
 
-import zencashjs from 'zencashjs'
+import bitcoinjs from 'bitcoinjs-lib-zcash'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -271,9 +271,6 @@ class SendPage extends React.Component {
       return
     }
 
-    // Private key
-    const senderPrivateKey = zencashjs.address.WIFToPrivKey(this.props.context.privateKey)
-
     // Get previous transactions
     const prevTxURL = urlAppend(this.props.settings.insightAPI, 'addr/') + senderAddress + '/utxo'
     const infoURL = urlAppend(this.props.settings.insightAPI, 'status?q=getInfo')
@@ -347,21 +344,35 @@ class SendPage extends React.Component {
                   }
                 }
 
-                // Create transaction
-                var txObj = zencashjs.transaction.createRawTx(history, recipients, blockHeight, blockHash)
+                //Start building transaction
+                let network = bitcoinjs.networks['zer']
+                var keyPair = bitcoinjs.ECPair.fromWIF(this.props.context.privateKey,network)
+                var txb = new bitcoinjs.TransactionBuilder(network)
+
+                //add inputs
+                for (var j = 0; j < history.length; j++) {
+                  txb.addInput(history[j].txid, history[j].vout)
+                }
+
+                //add outputs
+                for (var j = 0; j < recipients.length; j++) {
+                  var outputScript = bitcoinjs.address.toOutputScript(recipients[j].address,network)
+                  txb.addOutput(outputScript, recipients[j].satoshis)
+                }
 
                 // Sign each history transcation
                 for (var j = 0; j < history.length; j++) {
-                  txObj = zencashjs.transaction.signTx(txObj, j, senderPrivateKey, true)
+                  txb.sign(j,keyPair)
                 }
 
                 // Convert it to hex string
-                const txHexString = zencashjs.transaction.serializeTx(txObj)
+                const txHexString = txb.build().toHex()
+
 
                 // Post it to the api
                 axios.post(sendRawTxURL,
                   {
-                    rawtx: txHexString
+                    rawtx: '00' //txHexString
                   },
                   {
                     headers: {
