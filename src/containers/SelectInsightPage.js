@@ -55,14 +55,8 @@ class SelectInsightPage extends React.Component {
           <ListHeader style={{color: '#e69500', background: '#515151', fontSize: '120%'}}>
             Preconfigured Nodes
           </ListHeader>
-          <ListItem id="mainlist" tappable onClick={() => this.props.setInsightAPI('https://zeroapi.cryptonode.cloud/')}>
-            Team Zero Offical API #1
-          </ListItem>
-          <ListItem id="mainlist" tappable onClick={() => this.props.setInsightAPI('https://insight.zerocurrency.io/insight-api-zero/')}>
-            Team Zero Offical API #2
-          </ListItem>
-          <ListItem id="mainlist" tappable onClick={() => this.props.setInsightAPI('https://explorer.zer.zelcore.io/api/')}>
-            Zelcore API
+          <ListItem id="mainlist" tappable onClick={() => this.props.setInsightAPI('https://insight-test.cryptoforge.cc/insight-api-zero/')}>
+            Test API
           </ListItem>
         </List>
       </Page>

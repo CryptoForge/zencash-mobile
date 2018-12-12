@@ -1220,7 +1220,7 @@ big.js@^3.1.3:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.1.3.tgz#4cada2193652eb3ca9ec8e55c9015669c9806978"
   integrity sha1-TK2iGTZS6zyp7I5VyQFWacmAaXg=
 
-bigi@^1.1.0, bigi@^1.4.0, bigi@^1.4.2:
+bigi@^1.1.0, bigi@^1.4.0:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/bigi/-/bigi-1.4.2.tgz#9c665a95f88b8b08fc05cfd731f561859d725825"
   integrity sha1-nGZalfiLiwj8Bc/XMfVhhZ1yWCU=
@@ -1230,17 +1230,12 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.10.0.tgz#9aeb9a6c5e88638aad171e167f5900abe24835d0"
   integrity sha1-muuabF6IY4qtFx4Wf1kAq+JINdA=
 
-bindings@^1.2.1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.3.0.tgz#b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7"
-  integrity sha512-DpLh5EzMR2kzvX1KIlVC0VkC3iZtHKTgdtZ0a3pglBZdaQFjt5S9g9xd1lE+YvXyfd6mtCeRnrUfOLYiTMlNSw==
-
 bip32-utils@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/bip32-utils/-/bip32-utils-0.10.0.tgz#d1c278a101f3fe96b6a2acef1092bc692274a780"
   integrity sha1-0cJ4oQHz/pa2oqzvEJK8aSJ0p4A=
 
-bip66@^1.1.0, bip66@^1.1.3:
+bip66@^1.1.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/bip66/-/bip66-1.1.5.tgz#01fa8748785ca70955d5011217d1b3139969ca22"
   integrity sha1-AfqHSHhcpwlV1QESF9GzE5lpyiI=
@@ -1251,28 +1246,6 @@ bitcoin-ops@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/bitcoin-ops/-/bitcoin-ops-1.3.0.tgz#6b126b585537bc679b02ed499f14450cffc37e13"
   integrity sha1-axJrWFU3vGebAu1JnxRFDP/DfhM=
-
-"bitcoinjs-lib-zcash@git+https://github.com/zerocurrencycoin/zerojs-lib.git#sapling_try":
-  version "1.2.1"
-  resolved "git+https://github.com/zerocurrencycoin/zerojs-lib.git#e60cd1ed526c753d81acbe6c221a03ee12df90e7"
-  dependencies:
-    bech32 "0.0.3"
-    bigi "^1.4.0"
-    bip66 "^1.1.0"
-    bitcoin-ops "^1.3.0"
-    blake2b "https://github.com/BitGo/blake2b#6268e6dd678661e0acc4359e9171b97eb1ebf8ac"
-    bs58check "^2.0.0"
-    create-hash "^1.1.0"
-    create-hmac "^1.1.3"
-    debug "~3.1.0"
-    ecurve "^1.0.0"
-    merkle-lib "^2.0.10"
-    pushdata-bitcoin "^1.0.1"
-    randombytes "^2.0.1"
-    safe-buffer "^5.0.1"
-    typeforce "^1.11.3"
-    varuint-bitcoin "^1.0.4"
-    wif "^2.0.1"
 
 bitcoinjs-lib@^3.1.1:
   version "3.3.2"
@@ -1295,12 +1268,27 @@ bitcoinjs-lib@^3.1.1:
     varuint-bitcoin "^1.0.4"
     wif "^2.0.1"
 
-bl@^1.0.0:
+"bitgo-utxo-lib@git+https://github.com/cryptoforge/bitgo-utxo-lib.git#sapling_dirty":
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.1.tgz#cac328f7bee45730d404b692203fcb590e172d5e"
-  integrity sha1-ysMo977kVzDUBLaSID/LWQ4XLV4=
+  resolved "git+https://github.com/cryptoforge/bitgo-utxo-lib.git#133beb8fd6b78df9530cbbc6c0453e37a4da4a3c"
   dependencies:
-    readable-stream "^2.0.5"
+    bech32 "0.0.3"
+    bigi "^1.4.0"
+    bip66 "^1.1.0"
+    bitcoin-ops "^1.3.0"
+    blake2b "https://github.com/BitGo/blake2b#6268e6dd678661e0acc4359e9171b97eb1ebf8ac"
+    bs58check "^2.0.0"
+    create-hash "^1.1.0"
+    create-hmac "^1.1.3"
+    debug "~3.1.0"
+    ecurve "^1.0.0"
+    merkle-lib "^2.0.10"
+    pushdata-bitcoin "^1.0.1"
+    randombytes "^2.0.1"
+    safe-buffer "^5.0.1"
+    typeforce "^1.11.3"
+    varuint-bitcoin "^1.0.4"
+    wif "^2.0.1"
 
 "blake2b-wasm@https://github.com/BitGo/blake2b-wasm#193cdb71656c1a6c7f89b05d0327bb9b758d071b":
   version "2.0.0"
@@ -1322,7 +1310,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.11.3, bn.js@^4.4.0:
+bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
   integrity sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==
@@ -1387,7 +1375,7 @@ brorand@^1.0.1:
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
-browserify-aes@^1.0.0, browserify-aes@^1.0.4, browserify-aes@^1.0.6:
+browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/browserify-aes/-/browserify-aes-1.0.6.tgz#5e7725dbdef1fd5930d4ebab48567ce451c48a0a"
   integrity sha1-Xncl297x/Vkw1OurSFZ85FHEigo=
@@ -1460,7 +1448,7 @@ browserslist@^2.4.0:
     caniuse-lite "^1.0.30000718"
     electron-to-chromium "^1.3.18"
 
-bs58@^4.0.0, bs58@^4.0.1:
+bs58@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/bs58/-/bs58-4.0.1.tgz#be161e76c354f6f788ae4071f63f34e8c4f0a42a"
   integrity sha1-vhYedsNU9veIrkBx9j806MTwpCo=
@@ -1622,11 +1610,6 @@ chokidar@^1.6.0, chokidar@^1.6.1, chokidar@^1.7.0:
     readdirp "^2.0.0"
   optionalDependencies:
     fsevents "^1.0.0"
-
-chownr@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
-  integrity sha1-4qdQQqlVGQi+vSW4Uj1fl2nXkYE=
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -1898,7 +1881,7 @@ cordova-common@^2.0.1:
     underscore "^1.8.3"
     unorm "^1.3.3"
 
-cordova-ios@^4.5.4:
+cordova-ios@^4.5.5:
   version "4.5.5"
   resolved "https://registry.yarnpkg.com/cordova-ios/-/cordova-ios-4.5.5.tgz#af73dab0650ea8a38fff0e7863fde5fc7bad753c"
   integrity sha512-3+30m2dZ2yii7kg+H7cgpdpkXpMj54zoX5imjGGG4Z7dPXKmalTLc/9rLq+Iaa+Q1BqyOrUFaHopWOODRU6vCg==
@@ -1942,9 +1925,9 @@ cordova-plugin-file@^4.3.3:
   integrity sha1-AS6Xqhr7kfhJFuY0G1SDZtI96bk=
 
 cordova-plugin-google-analytics@^1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/cordova-plugin-google-analytics/-/cordova-plugin-google-analytics-1.8.3.tgz#234b152c4874e22675fcffc9a57ac378385f6a0a"
-  integrity sha512-gaSMz/XKKjO4qEXlY4/JNC0Un0rK5lTWOBp41Yb+lfC7Jo5xRaUxRGHF9GHcXzYRHEETiwQEvviAj3S6Dp8TwQ==
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-google-analytics/-/cordova-plugin-google-analytics-1.8.6.tgz#7886bd7ac9264e4dec7355ebed64d939b274731a"
+  integrity sha512-shg8e3ris1MzmhC8roraScc2GEcfe7sVlbKkvrO3wZUAlYr31sf+4wxZr/VQB6tEcPsmTAkoNjGr1zMwoYjMeg==
 
 cordova-plugin-http@^1.2.0:
   version "1.2.0"
@@ -2033,7 +2016,7 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
-create-hash@^1.1.0, create-hash@^1.1.2, create-hash@^1.1.3:
+create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/create-hash/-/create-hash-1.1.3.tgz#606042ac8b9262750f483caddab0f5819172d8fd"
   integrity sha1-YGBCrIuSYnUPSDyt2rD1gZFy2P0=
@@ -2043,7 +2026,7 @@ create-hash@^1.1.0, create-hash@^1.1.2, create-hash@^1.1.3:
     ripemd160 "^2.0.0"
     sha.js "^2.4.0"
 
-create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.3, create-hmac@^1.1.4, create-hmac@^1.1.6:
+create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.3, create-hmac@^1.1.4:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/create-hmac/-/create-hmac-1.1.6.tgz#acb9e221a4e17bdb076e90657c42b93e3726cf06"
   integrity sha1-rLniIaThe9sHbpBlfEK5PjcmzwY=
@@ -2416,15 +2399,6 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
   integrity sha1-hnqksJP6oF8d4IwG9NeyH9+GmLw=
 
-drbg.js@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/drbg.js/-/drbg.js-1.0.1.tgz#3e36b6c42b37043823cdbc332d58f31e2445480b"
-  integrity sha1-Pja2xCs3BDgjzbwzLVjzHiRFSAs=
-  dependencies:
-    browserify-aes "^1.0.6"
-    create-hash "^1.1.2"
-    create-hmac "^1.1.4"
-
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -2456,7 +2430,7 @@ elementtree@0.1.6:
   dependencies:
     sax "0.3.5"
 
-elliptic@^6.0.0, elliptic@^6.2.3:
+elliptic@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.0.tgz#cac9af8762c85836187003c8dfe193e5e2eae5df"
   integrity sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=
@@ -2485,13 +2459,6 @@ encoding@^0.1.11:
   integrity sha1-U4tm8+5izRq1HsMjgp0flIDHS+s=
   dependencies:
     iconv-lite "~0.4.13"
-
-end-of-stream@^1.0.0, end-of-stream@^1.1.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/end-of-stream/-/end-of-stream-1.4.0.tgz#7a90d833efda6cfa6eac0f4949dbb0fad3a63206"
-  integrity sha1-epDYM+/abPpurA9JSduw+tOmMgY=
-  dependencies:
-    once "^1.4.0"
 
 enhanced-resolve@^3.4.0:
   version "3.4.1"
@@ -2855,11 +2822,6 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expand-template@^1.0.2:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/expand-template/-/expand-template-1.1.0.tgz#e09efba977bf98f9ee0ed25abd0c692e02aec3fc"
-  integrity sha512-kkjwkMqj0h4w/sb32ERCDxCQkREMCAgS39DscDnSwDsbxnwwM1BTZySdC3Bn1lhY7vL08n9GoO/fVTynjDgRyQ==
-
 express@^4.13.3:
   version "4.15.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.4.tgz#032e2253489cf8fce02666beca3d11ed7a2daed1"
@@ -3192,11 +3154,6 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
-
-github-from-package@0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
-  integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -3569,11 +3526,6 @@ inquirer@^3.0.6:
     string-width "^2.1.0"
     strip-ansi "^4.0.0"
     through "^2.3.6"
-
-int64-buffer@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/int64-buffer/-/int64-buffer-0.1.9.tgz#9e039da043b24f78b196b283e04653ef5e990f61"
-  integrity sha1-ngOdoEOyT3ixlrKD4EZT716ZD2E=
 
 internal-ip@^1.2.0:
   version "1.2.0"
@@ -3996,18 +3948,6 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libsodium-sumo@0.5.4, libsodium-sumo@^0.5.2:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/libsodium-sumo/-/libsodium-sumo-0.5.4.tgz#08af4af945754ee9daf2de9d1385c9fc0e64cec0"
-  integrity sha512-2pbTnlT3148YqrPiKQsoANln2oEdU38mgC9ycYWwYEoqqyds2ZrsRaJvAuUVv1O9AAB+9Jo0oZwUR9HXYOppPA==
-
-libsodium-wrappers-sumo@^0.5.2:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/libsodium-wrappers-sumo/-/libsodium-wrappers-sumo-0.5.4.tgz#ee69f6c960965e0d7d65cc4282c2fb33485d06a2"
-  integrity sha512-ntUN3vu2VRwFp8L+c+qOoE8jT7xjbR0L6bp+rqQbiImSFid66Jw0P9I/2obEZUqzurl9AcLzYudVcYjANmk+TQ==
-  dependencies:
-    libsodium-sumo "0.5.4"
-
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4338,7 +4278,7 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.2.1, nan@^2.3.0:
+nan@^2.3.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
   integrity sha1-2Vv3IeyHfgjbJ27T/G63j5CDrUY=
@@ -4371,11 +4311,6 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
   integrity sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
-
-node-abi@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.1.1.tgz#c9cda256ec8aa99bcab2f6446db38af143338b2a"
-  integrity sha512-6oxV13poCOv7TfGvhsSz6XZWpXeKkdGVh72++cs33OfMh3KAX8lN84dCvmqSETyDXAFcUHtV7eJrgFBoOqZbNQ==
 
 node-fetch@^1.0.1:
   version "1.7.2"
@@ -4439,11 +4374,6 @@ node-uuid@^1.4.7:
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.8.tgz#b040eb0923968afabf8d32fb1f17f1167fdab907"
   integrity sha1-sEDrCSOWivq/jTL7HxfxFn/auQc=
 
-noop-logger@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/noop-logger/-/noop-logger-0.1.1.tgz#94a2b1633c4f1317553007d8966fd0e841b6a4c2"
-  integrity sha1-lKKxYzxPExdVMAfYlm/Q6EG2pMI=
-
 nopt@1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-1.0.9.tgz#3bc0d7cba7bfb0d5a676dbed7c0ebe48a4fd454e"
@@ -4505,7 +4435,7 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
-npmlog@^4.0.1, npmlog@^4.0.2:
+npmlog@^4.0.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
   integrity sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg==
@@ -4565,7 +4495,7 @@ on-headers@~1.0.1:
   resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.1.tgz#928f5d0f470d49342651ea6794b0857c100693f7"
   integrity sha1-ko9dD0cNSTQmUepnlLCFfBAGk/c=
 
-once@^1.3.0, once@^1.3.1, once@^1.3.3, once@^1.4.0:
+once@^1.3.0, once@^1.3.3:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
@@ -5195,26 +5125,6 @@ postcss@^6.0.1, postcss@^6.0.10, postcss@^6.0.2:
     source-map "^0.5.7"
     supports-color "^4.2.1"
 
-prebuild-install@^2.0.0:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-2.2.2.tgz#dd47c4d61f3754fb17bbf601759e5922e16e0671"
-  integrity sha512-F46pcvDxtQhbV3B+dm+exHuKxIyJK26fVNiJRmbTW/5D7o0Z2yzc8CKeu7UWbo9XxQZoVOC88aKgySAsza+cWw==
-  dependencies:
-    expand-template "^1.0.2"
-    github-from-package "0.0.0"
-    minimist "^1.2.0"
-    mkdirp "^0.5.1"
-    node-abi "^2.0.0"
-    noop-logger "^0.1.1"
-    npmlog "^4.0.1"
-    os-homedir "^1.0.1"
-    pump "^1.0.1"
-    rc "^1.1.6"
-    simple-get "^1.4.2"
-    tar-fs "^1.13.0"
-    tunnel-agent "^0.6.0"
-    xtend "4.0.1"
-
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -5315,14 +5225,6 @@ public-encrypt@^4.0.0:
     create-hash "^1.1.0"
     parse-asn1 "^5.0.0"
     randombytes "^2.0.1"
-
-pump@^1.0.0, pump@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/pump/-/pump-1.0.2.tgz#3b3ee6512f94f0e575538c17995f9f16990a5d51"
-  integrity sha1-Oz7mUS+U8OV1U4wXmV+fFpkKXVE=
-  dependencies:
-    end-of-stream "^1.1.0"
-    once "^1.3.1"
 
 punycode@1.3.2:
   version "1.3.2"
@@ -5434,7 +5336,7 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
 
-rc@^1.1.6, rc@^1.1.7:
+rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
   integrity sha1-LgPo5C7kULjLPc5lvhv4l04d/ZU=
@@ -5549,7 +5451,7 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2, readable-stream@^2.2.6, readable-stream@^2.2.9:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2, readable-stream@^2.2.6, readable-stream@^2.2.9:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
   integrity sha512-m+qzzcn7KUxEmd1gMbchF+Y2eIUbieUaxkWtptyHywrX0rE8QEYqPC07Vuy4Wm32/xE16NcdBctb8S0Xe/5IeQ==
@@ -5860,21 +5762,6 @@ sdp@^1.5.0:
   resolved "https://registry.yarnpkg.com/sdp/-/sdp-1.5.4.tgz#8e038f6ddb14bd765ae1f4b5216e12094511e0d0"
   integrity sha1-jgOPbdsUvXZa4fS1IW4SCUUR4NA=
 
-secp256k1@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/secp256k1/-/secp256k1-3.3.0.tgz#50ec9b201ba401403dd13ccbf21d31eeb3ff43cf"
-  integrity sha512-CbrQoeGG5V0kQ1ohEMGI+J7oKerapLTpivLICBaXR0R4HyQcN3kM9itLsV5fdpV1UR1bD14tOkJ1xughmlDIiQ==
-  dependencies:
-    bindings "^1.2.1"
-    bip66 "^1.1.3"
-    bn.js "^4.11.3"
-    create-hash "^1.1.2"
-    drbg.js "^1.0.1"
-    elliptic "^6.2.3"
-    nan "^2.2.1"
-    prebuild-install "^2.0.0"
-    safe-buffer "^5.1.0"
-
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -6010,15 +5897,6 @@ simctl@^1.1.1:
   dependencies:
     shelljs "^0.2.6"
     tail "^0.4.0"
-
-simple-get@^1.4.2:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/simple-get/-/simple-get-1.4.3.tgz#e9755eda407e96da40c5e5158c9ea37b33becbeb"
-  integrity sha1-6XVe2kB+ltpAxeUVjJ6jezO+y+s=
-  dependencies:
-    once "^1.3.1"
-    unzip-response "^1.0.0"
-    xtend "^4.0.0"
 
 simple-plist@0.2.1, simple-plist@^0.2.1:
   version "0.2.1"
@@ -6387,16 +6265,6 @@ tapable@^0.2.7:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
   integrity sha1-mTcqXJmb8t8WCvwNdL7U9HlIzSI=
 
-tar-fs@^1.13.0:
-  version "1.15.3"
-  resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-1.15.3.tgz#eccf935e941493d8151028e636e51ce4c3ca7f20"
-  integrity sha1-7M+TXpQUk9gVECjmNuUc5MPKfyA=
-  dependencies:
-    chownr "^1.0.1"
-    mkdirp "^0.5.1"
-    pump "^1.0.0"
-    tar-stream "^1.1.2"
-
 tar-pack@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.0.tgz#23be2d7f671a8339376cbdb0b8fe3fdebf317984"
@@ -6410,16 +6278,6 @@ tar-pack@^3.4.0:
     rimraf "^2.5.1"
     tar "^2.2.1"
     uid-number "^0.0.6"
-
-tar-stream@^1.1.2:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-1.5.4.tgz#36549cf04ed1aee9b2a30c0143252238daf94016"
-  integrity sha1-NlSc8E7RrumyowwBQyUiONr5QBY=
-  dependencies:
-    bl "^1.0.0"
-    end-of-stream "^1.0.0"
-    readable-stream "^2.0.0"
-    xtend "^4.0.0"
 
 tar@^2.2.1:
   version "2.2.1"
@@ -6608,11 +6466,6 @@ unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
-
-unzip-response@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-1.0.2.tgz#b984f0877fc0a89c2c773cc1ef7b5b232b5b06fe"
-  integrity sha1-uYTwh3/AqJwsdzzB73tbIytbBv4=
 
 url-loader@^0.5.9:
   version "0.5.9"
@@ -6952,7 +6805,7 @@ xmldom@0.1.x:
   resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.27.tgz#d501f97b3bdb403af8ef9ecc20573187aadac0e9"
   integrity sha1-1QH5ezvbQDr4757MIFcxh6rawOk=
 
-xtend@4.0.1, xtend@^4.0.0:
+xtend@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
@@ -7028,19 +6881,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
-
-"zencashjs@git+https://github.com/zerocurrencycoin/zerojs.git":
-  version "1.0.0"
-  resolved "git+https://github.com/zerocurrencycoin/zerojs.git#74d2872089a1335d6393c6b2094bc8653934952b"
-  dependencies:
-    bigi "^1.4.2"
-    bs58 "^4.0.1"
-    bs58check "^2.0.2"
-    create-hash "^1.1.3"
-    create-hmac "^1.1.6"
-    int64-buffer "^0.1.9"
-    libsodium-sumo "^0.5.2"
-    libsodium-wrappers-sumo "^0.5.2"
-    safe-buffer "^5.1.1"
-    secp256k1 "^3.3.0"
-    varuint-bitcoin "^1.0.4"

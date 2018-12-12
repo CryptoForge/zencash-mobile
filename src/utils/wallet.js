@@ -1,4 +1,4 @@
-var bitcoinjs = require('bitcoinjs-lib-zcash')
+var bitcoinjs = require('bitgo-utxo-lib')
 var bip32utils = require('bip32-utils')
 
 // Hierarchical Deterministic wallet
@@ -9,10 +9,10 @@ function phraseToSecretItems (phraseStr) {
 
   //Set Network
   let network = bitcoinjs.networks['zer']
-  console.log('Network ' + network)
+  //console.log('Network ' + network)
 
   // chains
-  const hdNode = bitcoinjs.HDNode.fromSeedHex(seedHex)
+  const hdNode = bitcoinjs.HDNode.fromSeedHex(seedHex, network)
   var chain = new bip32utils.Chain(hdNode)
 
   // Creates 3 address from the same chain

@@ -262,9 +262,10 @@ class MainPage extends React.Component {
   autoSwitchAPI (address) {
 
       const APIList = [
-        'https://zeroapi.cryptonode.cloud/',
-        'https://insight.zerocurrency.io/insight-api-zero/',
-        'https://explorer.zer.zelcore.io/api/'
+          'https://insight-test.cryptoforge.cc/insight-api-zero/'
+        //'https://zeroapi.cryptonode.cloud/',
+        //'https://insight.zerocurrency.io/insight-api-zero/',
+        //'https://explorer.zer.zelcore.io/api/'
       ]
 
       var APIurl = APIList[Math.floor(Math.random()*APIList.length)]
@@ -273,11 +274,11 @@ class MainPage extends React.Component {
 
   // Check Blockhash at hieght 412300 and set API
   checkAPI (APIurl, address) {
-    const autoSwitchURL = urlAppend(this.props.settings.insightAPI, 'block-index/412300')
+    const autoSwitchURL = urlAppend(this.props.settings.insightAPI, 'block-index/1')
     axios.get(autoSwitchURL)
       .then((resp) => {
       const blockHashData = resp.data
-      if (blockHashData.blockHash == '0000015b804b7d0f1fbc7f14d301c91b26413ecdf027d170c6c3194e81222028')
+      if (blockHashData.blockHash == '00a84aeebef18c7d6474a32bed97be3e25ed2b826249eab1fef401d069b15fe4')
         {
           this.setAddressInfo (this.props.settings.insightAPI, address)
         } else {

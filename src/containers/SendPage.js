@@ -17,7 +17,7 @@ import {
   ListHeader
 } from 'react-onsenui'
 
-import bitcoinjs from 'bitcoinjs-lib-zcash'
+import bitcoinjs from 'bitgo-utxo-lib'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -305,6 +305,7 @@ class SendPage extends React.Component {
 
                 const blockHash = responseBhash.data.blockHash
 
+
                 // Iterate through each utxo
                 // append it to history
                 for (var i = 0; i < txData.length; i++) {
@@ -315,6 +316,7 @@ class SendPage extends React.Component {
                   history = history.concat({
                     txid: txData[i].txid,
                     vout: txData[i].vout,
+                    satoshis: txData[i].satoshis,
                     scriptPubKey: txData[i].scriptPubKey
                   })
 
@@ -349,20 +351,26 @@ class SendPage extends React.Component {
                 var keyPair = bitcoinjs.ECPair.fromWIF(this.props.context.privateKey,network)
                 var txb = new bitcoinjs.TransactionBuilder(network)
 
+                if (infoData.info.blocks  >= 1500) {
+                  txb.setVersion(bitcoinjs.Transaction.ZCASH_SAPLING_VERSION)
+                  txb.setVersionGroupId(0x892F2085)
+                  txb.setExpiryHeight(infoData.info.blocks+300)
+                }
+
                 //add inputs
                 for (var j = 0; j < history.length; j++) {
                   txb.addInput(history[j].txid, history[j].vout)
                 }
 
                 //add outputs
-                for (var j = 0; j < recipients.length; j++) {
-                  var outputScript = bitcoinjs.address.toOutputScript(recipients[j].address,network)
-                  txb.addOutput(outputScript, recipients[j].satoshis)
+                for (var k = 0; k < recipients.length; k++) {
+                  var outputScript = bitcoinjs.address.toOutputScript(recipients[k].address,network)
+                  txb.addOutput(outputScript, recipients[k].satoshis)
                 }
 
                 // Sign each history transcation
-                for (var j = 0; j < history.length; j++) {
-                  txb.sign(j,keyPair)
+                for (var l = 0; l < history.length; l++) {
+                  txb.sign(l,keyPair,'',bitcoinjs.Transaction.SIGHASH_SINGLE,history[l].satoshis,'')
                 }
 
                 // Convert it to hex string
@@ -372,7 +380,7 @@ class SendPage extends React.Component {
                 // Post it to the api
                 axios.post(sendRawTxURL,
                   {
-                    rawtx: '00' //txHexString
+                    rawtx: txHexString
                   },
                   {
                     headers: {

@@ -13,7 +13,7 @@ import {
 } from '../actions/Settings'
 
 const initialSettings = {
-  insightAPI: 'https://zeroapi.cryptonode.cloud/',
+  insightAPI: 'https://insight-test.cryptoforge.cc/insight-api-zero/',
   explorerURL: 'https://zero.cryptonode.cloud/insight/',
   language: LANG_ENGLISH,
   currency: CURRENCY_USD,
